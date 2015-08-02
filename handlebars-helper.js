@@ -121,7 +121,7 @@ Handlebars.registerHelper('lte', function (left, right, options) {
   }
 });
 
-// 判断一个整数是否为奇数
+// 判断一个整数是否为偶数
 Handlebars.registerHelper('even', function (num, options) {
   if (arguments.length !== 2 ) {
     throw new Error('helper "even" needs 1 argument');
@@ -134,7 +134,7 @@ Handlebars.registerHelper('even', function (num, options) {
 });
 
 
-// 判断一个整数是否为偶数
+// 判断一个整数是否为奇数
 Handlebars.registerHelper('odd', function (num, options) {
   if (arguments.length !== 2 ) {
     throw new Error('helper "odd" needs 1 argument');
@@ -189,7 +189,6 @@ Handlebars.registerHelper('or', function () {
 
   var options = arguments[arguments.length - 1];
   var items = [].slice.call(arguments, 0, arguments.length - 1);
-  console.log(items)
   var result = items.reduce(function (memo, item) {
     return memo || item;
   });
