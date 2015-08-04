@@ -45,7 +45,10 @@
  * 用法: {{#or item1 item2 ...}} block {{else}} inverse {{/or}} else为可选
  * 含义: 多个值求或 ||, 参数可变长,如果结果true渲染block, 否则渲染inverse
  *
- *
+ * 12. stringify
+ * 用法: {{stringify obj}}
+ * 含义: 将obj序列号为字符串,并执行HTML特俗字符转换, 如", <, >, &这样就可以直接
+ *      将对象设置到DOM属性上,或者输出对象
  **/
 
 // 比较两个变量是否相等
@@ -197,4 +200,9 @@ Handlebars.registerHelper('or', function () {
   } else {
     return options.inverse(this);
   }
+});
+
+// 将对象序列号为字符串,调用JSON.stringify()
+Handlebars.registerHelper('stringify', function (obj) {
+  return JSON.stringify(obj);
 });
