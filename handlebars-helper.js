@@ -212,7 +212,7 @@ Handlebars.registerHelper('stringify', function (obj) {
   return JSON.stringify(obj);
 });
 
-// 使用encodeURIComponent转移字符串
+// 使用encodeURIComponent转义字符串
 Handlebars.registerHelper('encode', function (str) {
   return encodeURIComponent(str);
 });
