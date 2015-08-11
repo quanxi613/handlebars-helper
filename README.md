@@ -137,7 +137,6 @@
   含义: 多个值求或 ||, 参数可变长,如果结果true渲染block, 否则渲染inverse
 
 12. stringify
-<<<<<<< HEAD
   用法:
   ```
   {{stringify obj}}
