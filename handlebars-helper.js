@@ -49,6 +49,11 @@
  * 用法: {{stringify obj}}
  * 含义: 将obj序列号为字符串,并执行HTML特俗字符转换, 如", <, >, &这样就可以直接
  *      将对象设置到DOM属性上,或者输出对象
+ *
+ * 13. encode
+ * 用法: {{encode str}}
+ * 含义: 将str字符串使用encodeURIComponent转义
+ *
  **/
 
 // 比较两个变量是否相等
@@ -205,4 +210,9 @@ Handlebars.registerHelper('or', function () {
 // 将对象序列号为字符串,调用JSON.stringify()
 Handlebars.registerHelper('stringify', function (obj) {
   return JSON.stringify(obj);
+});
+
+// 使用encodeURIComponent转移字符串
+Handlebars.registerHelper('encode', function (str) {
+  return encodeURIComponent(str);
 });
